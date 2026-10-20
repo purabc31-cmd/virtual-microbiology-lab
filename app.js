@@ -21,6 +21,7 @@ if(s.photo){
  photo.setAttribute('x','18'); photo.setAttribute('y','18');
  photo.setAttribute('width','564'); photo.setAttribute('height','564');
  photo.setAttribute('preserveAspectRatio','xMidYMid slice');
+ photo.setAttribute('transform','translate(-112 -112) scale(1.4)');
  photo.setAttribute('clip-path','url(#micrographClip)');
  photo.setAttribute('class','real-micrograph');
  photo.addEventListener('error',()=>{photo.remove();s.photo='';this.drawSpecimen();});
