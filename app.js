@@ -18,7 +18,7 @@ if(s.photo){
  const imagePath=new URL(s.photo,document.baseURI).href;
  photo.setAttribute('href',imagePath);
  photo.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href',imagePath);
- const zoom={4:1.8,10:1.8,40:1.8,100:2.4}[this.magnification]||1;
+ const zoom=(s.name==='Cocci'&&[4,10].includes(this.magnification))?3.0:({4:1.8,10:1.8,40:1.8,100:2.4}[this.magnification]||1);
  const size=564*zoom;
  photo.setAttribute('x',String(300-size/2)); photo.setAttribute('y',String(300-size/2));
  photo.setAttribute('width',String(size)); photo.setAttribute('height',String(size));
