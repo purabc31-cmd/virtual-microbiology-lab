@@ -18,10 +18,11 @@ if(s.photo){
  const imagePath=new URL(s.photo,document.baseURI).href;
  photo.setAttribute('href',imagePath);
  photo.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href',imagePath);
- photo.setAttribute('x','18'); photo.setAttribute('y','18');
- photo.setAttribute('width','564'); photo.setAttribute('height','564');
+ const zoom={4:1,10:1.25,40:1.8,100:2.4}[this.magnification]||1;
+ const size=564*zoom;
+ photo.setAttribute('x',String(300-size/2)); photo.setAttribute('y',String(300-size/2));
+ photo.setAttribute('width',String(size)); photo.setAttribute('height',String(size));
  photo.setAttribute('preserveAspectRatio','xMidYMid slice');
- photo.setAttribute('transform','translate(-112 -112) scale(1.4)');
  photo.setAttribute('clip-path','url(#micrographClip)');
  photo.setAttribute('class','real-micrograph');
  photo.addEventListener('error',()=>{photo.remove();s.photo='';this.drawSpecimen();});
