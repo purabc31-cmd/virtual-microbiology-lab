@@ -15,13 +15,15 @@ while(layer.firstChild)layer.removeChild(layer.firstChild);
 if(s.photo){
  const NS='http://www.w3.org/2000/svg';
  const photo=document.createElementNS(NS,'image');
- photo.setAttribute('href',s.photo);
+ const imagePath=s.photo.startsWith('/')?s.photo:'/virtual-microbiology-lab/'+s.photo.replace(/^\.\//,'');
+ photo.setAttribute('href',imagePath);
+ photo.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href',imagePath);
  photo.setAttribute('x','18'); photo.setAttribute('y','18');
  photo.setAttribute('width','564'); photo.setAttribute('height','564');
  photo.setAttribute('preserveAspectRatio','xMidYMid slice');
  photo.setAttribute('clip-path','url(#micrographClip)');
  photo.setAttribute('class','real-micrograph');
- photo.addEventListener('error',()=>{photo.remove();});
+ photo.addEventListener('error',()=>{photo.remove();s.photo='';this.drawSpecimen();});
  layer.appendChild(photo);
  return;
 }
