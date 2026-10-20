@@ -1,10 +1,10 @@
 window.MICRO_DATA = {
 slides:[
-{name:'Cocci',morph:'cocci',shape:'Spherical cells',stain:'REAL MICROGRAPH · GRAM STAIN',description:'Real light-microscope photograph of Gram-positive cocci.',kind:'coccus',photo:'cocci.jpg',count:37},
-{name:'Bacilli',morph:'rods',shape:'Rod-shaped cells',stain:'REAL MICROGRAPH · BACILLI',description:'Real microscopy image showing rod-shaped bacteria.',kind:'rod',photo:'bacilli.jpg',count:25},
-{name:'Vibrios',morph:'vibrio',shape:'Curved rods',stain:'REAL MICROGRAPH · VIBRIO CHOLERAE',description:'CDC photomicrograph showing comma-shaped Vibrio bacteria.',kind:'vibrio',photo:'vibrio.jpg',count:24},
-{name:'Spirilla',morph:'spirilla',shape:'Rigid helical cells',stain:'REAL MICROGRAPH · SPIRAL FORMS',description:'Historical photomicrograph showing bacilli and spiral forms.',kind:'spirillum',photo:'spirilla.jpg',count:16},
-{name:'Spirochetes',morph:'spirochete',shape:'Thin flexible coils',stain:'REAL MICROGRAPH · SPIROCHETES',description:'Real microscopy image showing slender, flexible spiral bacteria.',kind:'spirochete',photo:'spirochetes.jpg',count:16},
+{name:'Cocci',morph:'cocci',shape:'Spherical cells',stain:'SIMULATED · GRAM-STAIN STYLE',description:'Simulated microscope view of spherical bacterial cells.',kind:'coccus',count:37},
+{name:'Bacilli',morph:'rods',shape:'Rod-shaped cells',stain:'SIMULATED · ROD-SHAPED BACTERIA',description:'Simulated microscope view of rod-shaped bacterial cells.',kind:'rod',count:25},
+{name:'Vibrios',morph:'vibrio',shape:'Curved rods',stain:'SIMULATED · VIBRIO MORPHOLOGY',description:'Simulated microscope view of comma-shaped Vibrio-like cells.',kind:'vibrio',count:24},
+{name:'Spirilla',morph:'spirilla',shape:'Rigid helical cells',stain:'SIMULATED · SPIRAL MORPHOLOGY',description:'Simulated microscope view of rigid spiral-shaped cells.',kind:'spirillum',count:16},
+{name:'Spirochetes',morph:'spirochete',shape:'Thin flexible coils',stain:'SIMULATED · SPIROCHETE MORPHOLOGY',description:'Simulated microscope view of slender, flexible spiral-shaped cells.',kind:'spirochete',count:16},
 {name:'Coccobacilli',morph:'coccobacillus',shape:'Short oval rods',stain:'SCHEMATIC · CONTRAST STAIN',description:'Short rods with rounded ends, between cocci and bacilli in appearance.',kind:'coccobacillus',count:27},
 {name:'Streptococcal chains',morph:'chain',shape:'Cocci in chains',stain:'SCHEMATIC · BLUE STAIN',description:'Spherical cells aligned into bead-like chains.',kind:'chain',count:12},
 {name:'Staphylococcal clusters',morph:'cluster',shape:'Irregular coccal clusters',stain:'SCHEMATIC · BLUE STAIN',description:'Round cells grouped in grape-like clusters.',kind:'cluster',count:14},
