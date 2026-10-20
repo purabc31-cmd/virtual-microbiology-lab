@@ -15,7 +15,7 @@ while(layer.firstChild)layer.removeChild(layer.firstChild);
 if(s.photo){
  const NS='http://www.w3.org/2000/svg';
  const photo=document.createElementNS(NS,'image');
- const imagePath=s.photo.startsWith('/')?s.photo:'/virtual-microbiology-lab/'+s.photo.replace(/^\.\//,'');
+ const imagePath=new URL(s.photo,document.baseURI).href;
  photo.setAttribute('href',imagePath);
  photo.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href',imagePath);
  photo.setAttribute('x','18'); photo.setAttribute('y','18');
