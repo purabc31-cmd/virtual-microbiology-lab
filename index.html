@@ -4,14 +4,14 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f7f5ed">
 <meta name="description" content="Explore microbiology with a virtual microscope, morphology explorer, culture media lab, identification cases and microbial control challenges.">
-<title>Virtual Microbiology Lab — BTY323</title>
+<title>Virtual Microbiology Lab</title>
 <link rel="stylesheet" href="./theme.css"><link rel="stylesheet" href="./app.css">
 <script src="./vendor/alpine.min.js"></script>
 <script src="./data.js"></script><script src="./app.js"></script>
 </head>
 <body x-data="microLab()" x-init="init()" class="min-h-screen">
 <header class="topbar">
-  <a href="#" class="brand" @click.prevent="active='microscope'"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M15 6l8-2 4 4-2 7-8 2-4-4z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M21 17l6 6m-15-3 8-2m-5 4a9 9 0 1 0 16 5M7 34h27M14 30l-3 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><strong>Virtual Microbiology Lab</strong><small>BTY323 · Learning studio</small></span></a>
+  <a href="#" class="brand" @click.prevent="active='microscope'"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M15 6l8-2 4 4-2 7-8 2-4-4z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M21 17l6 6m-15-3 8-2m-5 4a9 9 0 1 0 16 5M7 34h27M14 30l-3 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><strong>Virtual Microbiology Lab</strong><small>Learning studio</small></span></a>
   <nav class="desktop-nav" aria-label="Main navigation">
     <button :class="active==='microscope'?'nav-active':''" @click="active='microscope'">Microscope</button><button :class="active==='morphology'?'nav-active':''" @click="active='morphology'">Morphology</button><button :class="active==='culture'?'nav-active':''" @click="active='culture'">Culture media</button><button :class="active==='identify'?'nav-active':''" @click="active='identify'">Identify</button><button :class="active==='control'?'nav-active':''" @click="active='control'">Microbial control</button><button :class="active==='quiz'?'nav-active':''" @click="active='quiz'">Quiz</button>
   </nav><button class="mobile-menu" @click="menuOpen=!menuOpen" :aria-expanded="menuOpen?'true':'false'" aria-label="Toggle navigation">☰</button>
