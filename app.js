@@ -9,6 +9,22 @@ init(){this.drawSpecimen();this.completed=JSON.parse(localStorage.getItem('vml-c
 drawSpecimen(){
 const s=this.slides[this.slideIndex];
 const arr=[];
+const layer=document.getElementById('specimen-cells');
+if(!layer)return;
+while(layer.firstChild)layer.removeChild(layer.firstChild);
+if(s.photo){
+ const NS='http://www.w3.org/2000/svg';
+ const photo=document.createElementNS(NS,'image');
+ photo.setAttribute('href',s.photo);
+ photo.setAttribute('x','18'); photo.setAttribute('y','18');
+ photo.setAttribute('width','564'); photo.setAttribute('height','564');
+ photo.setAttribute('preserveAspectRatio','xMidYMid slice');
+ photo.setAttribute('clip-path','url(#micrographClip)');
+ photo.setAttribute('class','real-micrograph');
+ photo.addEventListener('error',()=>{photo.remove();});
+ layer.appendChild(photo);
+ return;
+}
 for(let i=0;i<s.count;i++){
  let kind=s.kind;
  if(s.kind==='coccus'&&i%7===0)kind='cluster';
@@ -17,9 +33,6 @@ for(let i=0;i<s.count;i++){
  arr.push({id:i,x,y,rot:(i*47)%180,scale:1.05+((i*13)%9)/18,kind});
 }
 this.currentCells=arr;
-const layer=document.getElementById('specimen-cells');
-if(!layer)return;
-while(layer.firstChild)layer.removeChild(layer.firstChild);
 const NS='http://www.w3.org/2000/svg';
 const node=(tag,attrs={})=>{const el=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));return el};
 arr.forEach(cell=>{
