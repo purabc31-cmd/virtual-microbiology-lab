@@ -24,6 +24,7 @@ if(s.photo){
  photo.setAttribute('width',String(size)); photo.setAttribute('height',String(size));
  photo.setAttribute('preserveAspectRatio','xMidYMid slice');
  photo.setAttribute('clip-path','url(#micrographClip)');
+ photo.setAttribute('clip-path','url(#micrographClip)');
  photo.setAttribute('class','real-micrograph');
  photo.addEventListener('error',()=>{photo.remove();s.photo='';this.drawSpecimen();});
  layer.appendChild(photo);
